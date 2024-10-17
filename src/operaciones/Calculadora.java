@@ -6,7 +6,7 @@ public class Calculadora {
 		
 		System.out.println("Calculadora");
 		System.out.println("1. Suma.");
-		
+		System.out.println("2. Resta");
 	}
 
 }
