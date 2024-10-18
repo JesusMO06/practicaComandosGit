@@ -1,0 +1,66 @@
+package capitulo04.bloque01_PrimerosArrays;
+
+import java.util.Scanner;
+
+public class Ej01 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int suma = 0, numMayor = 0, numMenor = 0;
+		
+//		DECLARAMOS LA RAID
+		int array[] = new int[150];
+		
+		// INICIALIZAMOS LOS VALORES DEL ARRAY
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random() * 100);
+		}
+
+		// MOSTRAMOS EN PANTALLA LOS RESULTADOS DEL ARRAY
+		for (int valorDentroDeArray : array) {
+			System.out.print(valorDentroDeArray + " ");
+		}
+		
+//		CALCULAMOS LA SUMA
+		for (int i = 0; i < array.length; i = i + 1) {
+			 suma = suma + array[i];
+		}
+		
+//		MOSTRAMOS EN PANTALLA LA SUMA
+		System.out.println(suma);
+		
+//		CALCULAMOS LA MEDIA
+		int media = suma / array.length;
+		
+//		MOSTRAMOS EN PANTALLA LA MEDIA
+		System.out.println(media);
+		
+//		INICIALIZAMOS EL NUMERO MAYOR Y MENOR PARA QUE NO DE ERROR
+		numMayor = array[0];
+		numMenor = array[0];
+		
+//		CON LA FUNCIÓN "for" VAMOS VIENDO SI EL SIGUIENTE NÚMERO ES MAYOR O MENOR QUE EL MAYOR O MENOR YA ESTABLECIDO
+		for (int i = 1; i < array.length; i = i + 1) {
+			
+//			SI EL SIGUIENTE NÚMERO ES MENOR QUE EL NÚMERO MENOR YA ESTABLECIDO, ÉSTE PASA A SER EL NUEVO NÚMERO MENOR
+			if (array[i] < numMenor) {
+				numMenor = array[i];
+			}
+			
+//			SI EL SIGUIENTE NÚMERO ES MAYOR QUE EL NÚMERO MAYOR YA ESTABLECIDO, ÉSTE PASA A SER EL NUEVO NÚMERO MAYOR
+			if (array[i] > numMayor) {
+				 numMayor = array[i];
+			}
+		}
+		
+//		MOSTRAMOS EN PANTALLA EL NÚMERO MENOR Y MAYOR DEL ARRAY
+		System.out.println("El número mayor del array es: " + numMayor + ""
+			+ "\nEl número menor del array es: " + numMenor);
+		
+		sc.close();
+		
+	}
+
+}

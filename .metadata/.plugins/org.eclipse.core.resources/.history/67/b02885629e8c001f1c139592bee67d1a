@@ -1,0 +1,33 @@
+package capitulo04.bloque01_PrimerosArrays;
+
+import java.util.Scanner;
+
+public class Ej02 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+//		PEDIMOS AL USUARIO EL LÍMITE INFERIOR Y SUPERIOR DE LOS 150 NÚMEROS ALAEATORIO
+		System.out.println("Introduce el límite inferior:");
+		int limInf = sc.nextInt();
+		System.out.println("Introduce el límite superior:");
+		int limSup = sc.nextInt();
+		
+//		DECLARAMOS LA RAID
+		int array[] = new int[150];
+		
+// 		INICIALIZAMOS LOS VALORES DEL ARRAY
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round((Math.random() * (limSup - limInf)) + limInf);
+		}
+
+// 		MOSTRAMOS EN PANTALLA LOS RESULTADOS DEL ARRAY
+		for (int valorDentroDeArray : array) {
+			System.out.print(valorDentroDeArray + " ");
+		}
+	
+		sc.close();
+		
+	}
+
+}

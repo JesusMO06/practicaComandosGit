@@ -1,0 +1,52 @@
+package capitulo04.bloque01_PrimerosArrays;
+
+import java.util.Scanner;
+
+public class Ej05 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int sumaPar = 0, sumaImpar = 0;
+		
+//		DECLARAMOS LA RAID
+		int array[] = new int[150];
+		
+// 		INICIALIZAMOS LOS VALORES DEL ARRAY
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random() * 100);
+		}
+				
+//		 MOSTRAMOS EN PANTALLA LOS RESULTADOS DEL ARRAY
+		for (int valorDentroDeArray : array) {
+			System.out.print(valorDentroDeArray + " ");
+		}
+		
+		System.out.println(" ");
+		
+//		RECORREMOS EL ARRAY EN BUSCA DE LOS NÚMERO PARES E IMPARES
+		for (int recorrido : array) {
+			
+			if (recorrido % 2 == 0) {
+				
+				sumaPar = sumaPar + recorrido;
+				
+			}
+			else {
+				
+				sumaImpar = sumaImpar + recorrido;
+				
+			}
+			
+		}
+		
+//		MOSTRAMOS AL USUARIO LA SUMA DE LOS NÚMERO PARES E IMPARES
+		System.out.println("Suma números pares: " + sumaPar);
+		System.out.println("Suma números impares: " + sumaImpar);
+		
+		sc.close();
+
+	}
+
+}
