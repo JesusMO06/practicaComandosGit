@@ -1,0 +1,59 @@
+package capitulo04.bloque01_PrimerosArrays;
+
+import java.util.Scanner;
+
+public class Ej04Buscar {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		boolean esta = false;
+		
+//		DECLARAMOS LA RAID
+		int array[] = new int[150];
+		
+// 		INICIALIZAMOS LOS VALORES DEL ARRAY
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random() * 100);
+		}
+		
+//		 MOSTRAMOS EN PANTALLA LOS RESULTADOS DEL ARRAY
+		for (int valorDentroDeArray : array) {
+			System.out.print(valorDentroDeArray + " ");
+		}
+		
+		System.out.println(" "
+			+ "\n");
+		
+//		PEDIMOS AL USUARIO EL NÚMERO QUE QUIERE BUSCAR
+		System.out.println("Introduce un número aleatorio del 0 al 100 para encontrar:");
+		int num = sc.nextInt();
+		
+//		CON EL BUCLE "for" VA PASANDO POR CADA VALOR HASTA QUE EL NÚMERO INTRODUCIDO SEA IGUAL A UNO QUE HAYA DENTRO DEL ARRAY
+		for (int i = 0; i < 150; i = i + 1) {
+			
+			if (num == array[i]) {
+				
+//				MOSTRAMOS AL USUARIO SI HA LOGRADO ENCONTRARLO	
+				System.out.println("¡¡¡Lo lograstes!!! "
+					+ "\nEstá en la posición: " + (i + 1) + ""
+					+ "\n");
+				
+				esta = true;
+				
+			}
+			
+		}
+		
+//		SI NO LO HA ENCONTRADO, TAMBIÉN SE LO MOSTRAMOS
+		if (esta == false) {
+					
+			System.out.println("Lo siento, el número " + num + " no está guardado :(");
+					
+		}
+
+		sc.close();
+		
+	}
+
+}

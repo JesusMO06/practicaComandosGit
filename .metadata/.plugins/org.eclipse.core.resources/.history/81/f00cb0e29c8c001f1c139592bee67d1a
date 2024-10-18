@@ -1,0 +1,16 @@
+package capitulo04.bloque01_PrimerosArrays;
+
+import java.util.Scanner;
+
+public class Ej06 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		sc.close();
+
+	}
+
+}
